@@ -37,3 +37,7 @@ if __name__ == "__main__":
     files = ['README.md', 'LICENSE']
     for filename in files:
         replace_content(root, filename, repo_info)
+    os.rename(
+        os.path.join(root, 'src'),
+        os.path.join(root, name.replace('-', '_')),
+    )
