@@ -1,2 +1,3 @@
-# template-repo-python
-A template repo for python projects
+# \$title
+
+[![CI](https://github.com/ammarnajjar/$name/workflows/ci/badge.svg)](https://github.com/ammarnajjar/$name/actions)
