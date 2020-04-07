@@ -42,3 +42,4 @@ if __name__ == "__main__":
         os.path.join(root, 'src'),
         os.path.join(root, module_name),
     )
+    os.remove(__file__)
