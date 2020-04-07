@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./:/usr/src/
+# docker-compose up -d --build
+# docker-compose exec app pytest .

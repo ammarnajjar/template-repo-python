@@ -28,7 +28,8 @@ def replace_content(
 if __name__ == "__main__":
     root = get_repo_root()
     name = os.path.basename(root)
-    title = name.replace('_', ' ').replace('-', ' ').capitalize()
+    module_name = name.replace('-', '_')
+    title = module_name.replace('_', ' ').capitalize()
     repo_info = {
         'year': str(datetime.now().year),
         'name': name,
@@ -39,5 +40,5 @@ if __name__ == "__main__":
         replace_content(root, filename, repo_info)
     os.rename(
         os.path.join(root, 'src'),
-        os.path.join(root, name.replace('-', '_')),
+        os.path.join(root, module_name),
     )
