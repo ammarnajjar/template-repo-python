@@ -17,12 +17,12 @@ def replace_content(
     filename: str,
     template_dict: Dict[str, str],
 ) -> None:
-    with open(os.path.join(root, filename), 'r+') as license_file:
-        license = license_file.read().replace('\\', '')
-        updated_license = Template(license).safe_substitute(repo_info)
-        license_file.seek(0)
-        license_file.truncate()
-        license_file.write(updated_license)
+    with open(os.path.join(root, filename), 'r+') as f:
+        content = f.read().replace('\\', '').split('---')[0]
+        updated_content = Template(content).safe_substitute(repo_info)
+        f.seek(0)
+        f.truncate()
+        f.write(updated_content)
 
 
 if __name__ == "__main__":
